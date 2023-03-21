@@ -155,13 +155,5 @@ ggsave("eBPis.png",
        height=5)
 """ > cov.R
 
-##create final PDF with comparisons 
-
-glm_png="/media/inter/ssteindl/FC/test/results/3R_Pvalues.png"
-man_lea="/media/inter/ssteindl/FC/test/results/LEA/ManhattanLEA.png"
-xtx_bay="/media/inter/ssteindl/DEST/DEST_NHM/XtXstats.png"
-output_file="images.pdf"
-touch $output_file
-convert $glm $output_file
 
 
