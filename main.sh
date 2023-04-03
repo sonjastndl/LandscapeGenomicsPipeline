@@ -2,13 +2,6 @@
 ## Date: 23.02.2022
 ## Status: in progress 
 
-
-####### REQUIRED PROGRAMS #######
-# VCFTOOLS   please install     #
-# BAYPASS    please install     #
-#                               #
-#################################
-
 # Declare your work environment and provide a file with the names of the populations you want to analyze
 wd=$(pwd)
 cd $wd
