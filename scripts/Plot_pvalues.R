@@ -9,7 +9,6 @@ args <- commandArgs(TRUE)
 setwd(args[1])
 
 
-
 ## read AlleleFrequency Matrix
 DATA=read.table(args[2],
   header=T)

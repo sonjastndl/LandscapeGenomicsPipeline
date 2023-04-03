@@ -76,12 +76,15 @@ wget https://raw.githubusercontent.com/DEST-bio/DEST_freeze1/main/populationInfo
 metadata="results/metadata.csv"
 
 # Perform linear regression on 3R
+#INCLUDE a Rmd File that captures statistics on the calculations and analysis 
 Rscript /media/inter/ssteindl/DEST/LanGen/Plot_pvalues.R $wd results/${outaf} $metadata
+
+
+# Latent Factor Mixed Model
 
 LeaOut="results/LEA"
 mkdir $LeaOut
 
-# Latent Factor Mixed Model
 # choose number of latent factors (nK) and number of i
 nK=3
 nR=3 # number of calculation repetitions for each factor
