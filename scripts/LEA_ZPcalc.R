@@ -36,6 +36,8 @@ png("adjp.png")
 hist(adjusted.p.values, col = 3)
 dev.off()
 
+getwd()
+
 ##plot the p values as mp
 
 Bonf=-log10(0.05/ncol(DATA))
@@ -52,4 +54,4 @@ geom_point(alpha=0.3) +
   ggtitle(paste("p values for",var))+
   theme_bw()
 
-ggsave("ManhattanLEA.png",pl, width=15, height=5)
+ggsave(paste("ManhattanLEA",var,".png", sep=""),pl, width=15, height=5)

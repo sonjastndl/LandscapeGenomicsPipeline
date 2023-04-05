@@ -3,7 +3,6 @@ from collections import defaultdict as d
 from optparse import OptionParser, OptionGroup
 import csv
 from csv import reader, writer
-import pandas as pd
 import numpy as np
 
 #########################################################   HELP   #########################################################################
@@ -20,7 +19,7 @@ parser.add_option("--samples", dest="SAMP", help="samplename file")
 parser.add_option_group(group)
 
 samples=[]
-with open("samplenames.csv", 'r') as f:
+with open(options.SAMP, 'r') as f:
     reader = csv.reader(f)
     for line in reader:
         print(line)

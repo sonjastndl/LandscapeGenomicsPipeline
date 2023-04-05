@@ -54,7 +54,7 @@ popsize=[]
 for line in meta:
     for pop in matching_pops:
         if line.startswith(pop):
-            popsize.append(line.split(",")[4])
+            popsize.append(line.split(",")[5])
 
 with open("results/BAYPASS/size.poolsize",'w') as file:
     file.write(' '.join(map(str, popsize)))
@@ -97,7 +97,7 @@ for line in vcf:
     flag = flag + 1
     print(flag)
 
-print("longitud: " + str(len(geno_file)))
+print("SNP: " + str(len(geno_file)))
 geno_output = open(options.OUT, 'w')
 
 #for geno in geno_file:
