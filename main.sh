@@ -71,7 +71,10 @@ python3 ${scripts}/VCF2AF.py \
 
 
 ### restrict to samples and two biovariables7
-## ATTENTION, column 24 added for nFLIES for baypass
+## ATTENTION, column 24 added for nFLIES for baypass 
+#this restriction only for glm?? later on py script 
+#maybe make this "user friendlyier" and let user choose which variable to analyze
+
 {
   head -1 data/dest_v2.samps_25Feb2023.csv
   grep -f ${samples} data/dest_v2.samps_25Feb2023.csv
@@ -124,8 +127,10 @@ python3 ${scripts}/geno_creation_ext.py \
     --samples $samples \
     --metadata $metadata
 
-## IMPORTANT, MALE is a covariate which cannot be interpreted by BAYPASS (String?) and therefore recode?
-## 
+## This script scans which columns (covariates) are numeric and only uses these for generating the BAYPASS covariate file and also creates and additional "covariate.info" file
+## for indication which variables went into the analyses 
+## IDEA: maybe recode variables that are string into numeric, also NAs not accepted yet ?
+## change data/dest_v2... to the FINAL metadata/environemtnal data table  
 python3 ${scripts}/create_cov.py --input data/dest_v2.samps_25Feb2023.csv --output $baycov --samples $samples
 
 ##Result
