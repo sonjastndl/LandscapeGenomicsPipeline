@@ -18,6 +18,9 @@ This pipeline performs several landscape-genomics analysis on a SNP called data 
 
 ## Workflow Overview 
 
+![Visual representation as diagram](LandscapeGenomicsFairiCube.drawio.png)
+
+
 0) Setup environment
 1) Download and define data
 2) Subsample VCF for chromosomal arms (computational reasons while pipeline development)
