@@ -31,7 +31,7 @@ mv dest.PoolSeq.PoolSNP.001.50.10Nov2020.ann.vcf.gz dest.PoolSeq.2020.ann.vcf.gz
 
 
 # Declare the VCF File as Input File for the following steps
-input="dest.PoolSeq.2020.ann.vcf.gz"
+input="data/dest.PoolSeq.2020.ann.vcf.gz"
 output="Subsampled_"${arm}".recode.vcf.gz" #name must match with the awk of the chromosomes 
 outaf="Subsampled_"${arm}".recode.af"
 #scripts="/media/inter/mkapun/projects/FAIRiCUBE/uc3-drosophola-genetics/DrosoEnvironmentTest/scripts"
@@ -104,28 +104,31 @@ Rscript /media/inter/ssteindl/DEST/LanGen/LEA_ZPcalc.R $LeaOut $nK $nR ${wd}/res
 #sh /media/inter/ssteindl/DEST/LanGen/BAYPASS/baypass_main.sh 
 #Script "main" (Including geno_creation.py, some shell commands to create necessary files, run Baypass)
 bayin="results/k10."${output}
-bayout="baypass.geno"
-baydir="results/BAYPASS"
+baydir="results/BAYPASS/Polymorph/"
 mkdir $baydir
-baycov="results/BAYPASS/covariates.csv"
+bayout= ${baydir}"baypass.geno"
+baycov=${baydir}"covariates.csv"
 
 ##note that this starts from VCF and not AF, needs to be changed in order to give comparable results 
 ###change in line 103 necessar<: output to outaf!!!
 #python3 /media/inter/ssteindl/DEST/LanGen/BAYPASS/geno_creation_ext.py --input $input --output ${baydir}${bayout}
-python3 /media/inter/ssteindl/DEST/LanGen/BAYPASS/geno_creation_ext.py \
-    --input $bayin \
-    --output ${baydir}/${bayout} \
+python3 /media/inter/ssteindl/FC/LandscapeGenomicsPipeline/scripts/geno_creation_polymorphic.py \
+    --input /media/inter/ssteindl/FC/LandscapeGenomicsPipeline/results/k10.Subsampled_3R.recode.vcf.gz\
+    --output $bayout \
     --samples $samples \
     --metadata $metadata
 
+    ##inlcude: if sum of alt/ref alleles = 0; continue
+    ##and write file with pos of (non-continue blabla)
+
 ## IMPORTANT, MALE is a covariat which cannot be interpreted by BAYPASS (String?) and therefore recode?
 ## 
-python3 /media/inter/ssteindl/FC/test/create_cov.py --input samps_10Nov2020.csv --output $baycov #--samples $samples
+python3 /media/inter/ssteindl/FC/LandscapeGenomicsPipeline/scripts/create_cov.py --input samps_10Nov2020.csv --output $baycov #--samples $samples
 
+genofile=${bayout}
 ##Result
 #create on results folder with subdirectories (results for each method) and one general "comparison result"??
-/media/inter/ssteindl/DEST/LanGen/baypass_2.3/sources/g_baypass -npop $(wc -l $samples) -gfile ${baydir}/${bayout} -efile $baycov -outprefix BayPass -poolsizefile $baydir/size.poolsize
-
+/media/inter/ssteindl/DEST/LanGen/baypass_2.3/sources/g_baypass -npop $(wc -l $samples) -gfile $genofile -efile $baycov -outprefix results/BAYPASS/Polymorph/BayPass -poolsizefile results/BAYPASS/size.poolsize
 
 echo """
 ### XtX statistics over the 10k SNPs

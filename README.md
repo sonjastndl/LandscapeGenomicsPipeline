@@ -8,11 +8,10 @@ This pipeline performs several landscape-genomics analysis on a SNP called data 
 
 ## Preliminary Results on Test Data
 
----
 
 ## Requirements
-- VCFTools (Citation)
-- Baypass2.3 (Citation)
+- VCFTools (vcftools.github.io/license.html)
+- Baypass2.3 (http://www1.montpellier.inra.fr/CBGP/software/baypass/index.html)
 - LEA R-Package (Citation)
 
 ## Workflow 
@@ -31,11 +30,16 @@ This pipeline performs several landscape-genomics analysis on a SNP called data 
 
 6) Baypass Analysis
 
+**Creation of geno file**: Keep in mind, for this pipeline only a few samples are used therefore there are more likely "monomorphic" sites, if there are no monomorphic sites all will be kept and all positions are represented in the keep-file.
+
+
 7) Result Comparison 
 
 x) The basic workflow can be performed according to [main.sh](d/d/main.sh)
 
 ---
 
-## How to execute
+
+
+## Tipps
 

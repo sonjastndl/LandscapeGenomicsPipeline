@@ -38,6 +38,9 @@ parser.add_option_group(group)
 vcf = gzip.open(options.IN, "rt", encoding="utf-8").readlines()[1:]
 
 geno_file = []
+keep=[]
+kick=[]
+allfromvcf=[]
 # columns=[*range(9,(n+9),1)]
 
 
@@ -93,12 +96,29 @@ for line in vcf:
                 geno_file_line.append(str(alternative))
         else: 
             geno_file_line.append(str("0"))
-    ##insert if statement to check for monomorphic here
-    geno_file.append(geno_file_line)
-    flag = flag + 1
-    print(flag)
+    sumref=0
+    sumalt=0
+    
+    for j in range(0,len(geno_file_line),2):
+        sumref=sumref+int(geno_file_line[j])
+        #print(sumref)
+    for k in range(1,len(geno_file_line),2):
+        sumalt=sumalt+int(geno_file_line[k])
+        #print(sumalt)
+    if sumref!=0 and sumalt!=0:
+        geno_file.append(geno_file_line)
+        keep.append((chromosome+"\t"+position))
+    else:
+        kick.append((chromosome+"\t"+position))
+    allfromvcf.append((chromosome+"\t"+position))
 
-print("longitud: " + str(len(geno_file)))
+
+
+   
+
+
+
+print("samples passed the monomorphic filter: " + str(len(geno_file)))
 geno_output = open(options.OUT, 'w')
 
 #for geno in geno_file:
@@ -110,6 +130,22 @@ for geno in geno_file:
 
 
 ##write the poolsize file as well
-meta = open(options.META, "rt").readlines()
+#meta = open(options.META, "rt").readlines()
 
+#write keep and kick
+
+MarkersKept= open("results/BAYPASS/MarkersKept.csv", 'w')
+for marker in keep:
+    MarkersKept.write(marker)
+    MarkersKept.write("\n")
+
+MarkersKicked= open("results/BAYPASS/MarkersKicked.csv", 'w')
+for marker in kick:
+    MarkersKicked.write(marker)
+    MarkersKicked.write("\n")
+
+All= open("results/BAYPASS/AllMarkers.csv",'w')
+for marker in allfromvcf:
+    All.write(marker)
+    All.write("\n")
 

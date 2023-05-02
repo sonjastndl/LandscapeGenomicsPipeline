@@ -1,2 +1,4 @@
 data/
 results/
+scripts/geno_creation_ext.py
+scripts/geno_creation_AF.py

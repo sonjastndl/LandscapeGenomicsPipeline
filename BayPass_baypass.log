@@ -1,0 +1,168 @@
+Running BayPass Version 2.3 with the following command line:
+/media/inter/ssteindl/DEST/LanGen/baypass_2.3/sources/g_baypass -npop 9 samplenames.csv -gfile results/BAYPASS/POLYmorphic_baypass.geno -efile results/BAYPASS/covariates.csv -outprefix BayPass -poolsizefile results/BAYPASS/size.poolsize                   
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Size of the data set 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ No of Markers                      =      8789
+ No of Populations                  =         9
+ Genotype File name                 =    results/BAYPASS/POLYmorphic_baypass.geno
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Model Specifications
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+ -> POOLSEQ MODE with pool sizes:    40    40    40    40    40    40    40    40    40
+
+  -> IS Covariate Mode with  56 covariates (i.e. BF and Beta coef will be estimated using an Importance Sampling algorithm):
+  (*) Omega matrix is estimated with prior inv(Omega) ~ Wish_npop((1/rho)Id_npop,rho)  with rho=     1
+  (*) Parameters from the Pi prior dist. will be estimated
+  (*) Outlier detection: XtX stat. for each SNP        
+  (*) Prior on Beta coef is U( -0.3000,  0.3000)
+  (*) IS estimates are approximate on the grid with  201 points uniformly distributed over the ( -0.3000,  0.3000) interval
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+           MCMC specifications
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+ Nb. of sampled parameter values       =    1000
+ Thinning Rate                         =      20
+ Burn in Period Length                 =    5000
+ Max Number of Pilot runs              =      20
+ Pilot run Length                      =     500
+
+ Init. deltas for Pi proposals          = 0.5000
+ Coop Pij proposal with init. sig. for Pi. multivariate prop.          =  0.0500
+ Pilot Run Adj. Factor Pilot            =  1.25
+ Targeted Rej./Acc. rates              =  0.25-0.40
+ R.N.G. seed                            =    5001
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        COVARIATE DATA
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Cov:   1  (Mean =     90.5556  ; SD =     40.3612)
+Cov:   2  (Mean =     91.1111  ; SD =     16.8778)
+Cov:   3  (Mean =     30.6667  ; SD =      7.2629)
+Cov:   4  (Mean =   7292.4444  ; SD =   1704.9911)
+Cov:   5  (Mean =    248.4444  ; SD =     38.5198)
+Cov:   6  (Mean =    -49.0000  ; SD =     57.7191)
+Cov:   7  (Mean =    297.4444  ; SD =     47.7549)
+Cov:   8  (Mean =    133.4444  ; SD =     54.8045)
+Cov:   9  (Mean =     48.8889  ; SD =     97.3954)
+Cov:  10  (Mean =    183.0000  ; SD =     28.1824)
+Cov:  11  (Mean =     -3.7778  ; SD =     58.3390)
+Cov:  12  (Mean =    675.1111  ; SD =    230.4482)
+Cov:  13  (Mean =     89.5556  ; SD =     32.7113)
+Cov:  14  (Mean =     27.5556  ; SD =     10.8985)
+Cov:  15  (Mean =     34.5556  ; SD =      8.2782)
+Cov:  16  (Mean =    248.7778  ; SD =    102.3887)
+Cov:  17  (Mean =     97.1111  ; SD =     29.5823)
+Cov:  18  (Mean =    189.6667  ; SD =     90.3770)
+Cov:  19  (Mean =    158.4444  ; SD =    111.8013)
+Cov:  20  (Mean =    -48.0000  ; SD =     56.7979)
+Cov:  21  (Mean =    -43.0000  ; SD =     57.7018)
+Cov:  22  (Mean =     -7.7778  ; SD =     51.0289)
+Cov:  23  (Mean =     37.3333  ; SD =     32.2878)
+Cov:  24  (Mean =     81.3333  ; SD =     24.1713)
+Cov:  25  (Mean =    117.6667  ; SD =     18.9868)
+Cov:  26  (Mean =    136.2222  ; SD =     20.7049)
+Cov:  27  (Mean =    129.5556  ; SD =     23.7598)
+Cov:  28  (Mean =     97.0000  ; SD =     31.4404)
+Cov:  29  (Mean =     53.5556  ; SD =     33.9783)
+Cov:  30  (Mean =      9.8889  ; SD =     38.5793)
+Cov:  31  (Mean =    -22.7778  ; SD =     48.9050)
+Cov:  32  (Mean =     21.1111  ; SD =     64.1433)
+Cov:  33  (Mean =     36.3333  ; SD =     68.5164)
+Cov:  34  (Mean =     79.7778  ; SD =     62.7451)
+Cov:  35  (Mean =    135.7778  ; SD =     44.8073)
+Cov:  36  (Mean =    189.3333  ; SD =     31.5634)
+Cov:  37  (Mean =    226.7778  ; SD =     31.0636)
+Cov:  38  (Mean =    248.3333  ; SD =     38.4870)
+Cov:  39  (Mean =    241.1111  ; SD =     41.9060)
+Cov:  40  (Mean =    199.7778  ; SD =     49.5953)
+Cov:  41  (Mean =    140.3333  ; SD =     52.5833)
+Cov:  42  (Mean =     77.7778  ; SD =     55.7982)
+Cov:  43  (Mean =     36.8889  ; SD =     56.1860)
+Cov:  44  (Mean =     54.5556  ; SD =     39.7590)
+Cov:  45  (Mean =     45.8889  ; SD =     34.6462)
+Cov:  46  (Mean =     43.2222  ; SD =     20.7833)
+Cov:  47  (Mean =     52.0000  ; SD =     22.9401)
+Cov:  48  (Mean =     61.6667  ; SD =     20.0811)
+Cov:  49  (Mean =     66.0000  ; SD =     28.8401)
+Cov:  50  (Mean =     64.2222  ; SD =     37.6324)
+Cov:  51  (Mean =     57.4444  ; SD =     30.3361)
+Cov:  52  (Mean =     53.6667  ; SD =     15.2807)
+Cov:  53  (Mean =     56.5556  ; SD =     30.2618)
+Cov:  54  (Mean =     60.1111  ; SD =     37.7043)
+Cov:  55  (Mean =     59.7778  ; SD =     37.0971)
+Cov:  56  (Mean =      0.0266  ; SD =      0.0583)
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        COUNT DATA
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+First SNP ref. Allele count     7   15    8    9   17   14   18   10   22
+First SNP total Gene count     13   15   12   12   21   20   32   16   33
+Last  SNP ref. Allele count    45   44   34   37   21   48   42   27   60
+Last  SNP total Gene count     45   45   34   37   21   48   42   27   60
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        PILOT RUNS
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Initial Values:
+Yij min         =        0.0  Yij max         =       40.0  Average Yij     =       34.4
+Pij min         =      0.02381  Pij max         =      0.97619  Average Pij     =      0.84351
+Pij_til min     =     -1.54395  Pij_til max     =      1.41889  Average Pij_til =      0.00000
+PI min          =      0.02646  PI max          =      0.97354  Average PI      =      0.84351
+Pi_beta_params values       1.70419      0.31617
+
+!!!!!!!!!!!!!!!!!!!
+## PILOT RUN:    1
+!!!!!!!!!!!!!!!!!!!
+
+i)   Node Values:
+Yij min         =        0.0  Yij max         =       40.0  Average Yij     =       34.3
+Pij min         =     -0.34637  Pij max         =      1.47530  Average Pij     =      0.85907
+Pij_til min     =     -1.95221  Pij_til max     =      1.97968  Average Pij_til =      0.02577
+PI min          =      0.00554  PI max          =      0.99943  Average PI      =      0.85434
+Pi_beta_params values       2.34594      0.46431
+
+ii)  Acceptance Rates (before adjustment):
+  Acceptance Rate not achieved for     66761   out of     79101   y
+  Acceptance Rate not achieved for      7951   out of      8789   p_ij vectors
+  Acceptance Rate not achieved for      8789   out of      8789   pi
+      Mean Acceptance Rate Y  =  0.30342   mean delta_y=     1.4
+      Mean Acceptance Rate Pij  =  0.58099   mean delta_p=  0.06122
+      Mean Acceptance Rate Pi   =  0.07462   mean delta_pi=  0.40000
+      Mean Acceptance Rate b_mu =  0.10800        delta  =  0.04000
+      Mean Acceptance Rate b_phi=  0.03200        delta  =  0.80000
+
+iii) Running Time            :  0 d  0 h  0 min 19 sec
+     Estimated Remaining Time:  0 d  0 h 22 min 34 sec
+
+!!!!!!!!!!!!!!!!!!!
+## PILOT RUN:    2
+!!!!!!!!!!!!!!!!!!!
+
+i)   Node Values:
+Yij min         =        0.0  Yij max         =       40.0  Average Yij     =       34.4
+Pij min         =     -0.66343  Pij max         =      1.54272  Average Pij     =      0.86208
+Pij_til min     =     -2.27420  Pij_til max     =      2.38672  Average Pij_til =      0.03296
+PI min          =      0.00908  PI max          =      0.99969  Average PI      =      0.85567
+Pi_beta_params values       2.16306      0.43629
+
+ii)  Acceptance Rates (before adjustment):
+  Acceptance Rate not achieved for     68222   out of     79101   y
+  Acceptance Rate not achieved for      6312   out of      8789   p_ij vectors
+  Acceptance Rate not achieved for      8789   out of      8789   pi
+      Mean Acceptance Rate Y  =  0.30611   mean delta_y=     1.8
+      Mean Acceptance Rate Pij  =  0.49876   mean delta_p=  0.07132
+      Mean Acceptance Rate Pi   =  0.10298   mean delta_pi=  0.32000
+      Mean Acceptance Rate b_mu =  0.13800        delta  =  0.03200
+      Mean Acceptance Rate b_phi=  0.03800        delta  =  0.64000
+
+iii) Running Time            :  0 d  0 h  0 min 39 sec
